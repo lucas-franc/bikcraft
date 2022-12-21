@@ -1,0 +1,75 @@
+.questions {
+  padding-bottom: 120px;
+  padding-top: 120px;
+}
+
+.questions h2 {
+  margin-bottom: 60px;
+}
+
+.questions dl > div {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.questions dl > div:nth-child(odd) {
+  background-color: var(--color-1);
+}
+
+.questions button {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
+
+.questions button::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  background-color: var(--color-p1);
+}
+
+.questions button::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 6px;
+  background: url("../../img/icons/open-arrow.svg");
+  transition: 0.3s;
+}
+
+.questions button:hover:after,
+.questions button[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.js .questions dd {
+  display: none;
+}
+
+.js .questions dd.active {
+  display: block;
+}
+
+.questions dd {
+  padding-left: 20px;
+  padding-top: 16px;
+  max-width: 80ch;
+}
+
+@media (max-width: 800px) {
+  .questions {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .questions h2 {
+    margin-bottom: 40px;
+  }
+}
